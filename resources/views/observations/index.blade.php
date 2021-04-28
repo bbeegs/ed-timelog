@@ -1,18 +1,8 @@
 @extends ('layout')
 @section('content')
-    <div class="rows is-mobile" style="font-family: 'IBM Plex Serif', serif;">
-	<div class="content ml-3 is-flex is-justify-content-space-between">
-	    <h3>
-		<?php
-		date_default_timezone_set('US/Eastern');
-		echo date("l - F j, Y - g:i a");
-		?>
-	    </h3>
-	</div>
-
-	
-	<div class="column is-justify-content-center">
-	    <table class="table is-striped is-bordered is-fullwidth is-hoverable">
+  
+    <div class="column table-container is-mobile">
+	<table class="table is-striped is-bordered is-hoverable is-fullwidth">
 		<thead class="has-background-info-light">
 		    <tr>
 			<th>First Name</th>
@@ -35,12 +25,12 @@
 			<td class="is-vcentered">{{$ob->observation_end }}</td>
 			<td class="is-vcentered">{{$ob->total_hours }}</td>
 			<td class="is-vcentered">{{$ob->observation_date }}</td>
-			<td class ="is-flex">
-			    <form method="GET" 
+			<td class ="is-vcentered"><div class="is-flex">
+			    <form method="GET"
 				  action="/observations/{{ $ob->id }}/edit"> 
 				
 				
-				<button class="button is-light is-success mr-3" type="submit"
+				<button class="button is-light is-success mr-3" type="submit" style="display: inline;"
 					@if($ob->observation_date <  \Carbon\Carbon::today()->subDays(31)) title="Disabled button"  disabled @endif>
 				<span class="icon is-small">
 				    <i class="fas fa-edit"></i>
@@ -59,12 +49,12 @@
 					onclick="return confirm('Are you sure?')"
 					class="button is-light is-danger">Remove</button>
 				</form>
+			</div>
 			</td>
 		    </tr>
 		    @endforeach
 		</tbody>
-	    </table>
-	    <span>{{ $observations->links() }}</span>
+		</table>
 	</div>
-    </div>
+	<span class="is-flex is-justify-content-center">{{ $observations->links() }}</span>
 @endsection 
