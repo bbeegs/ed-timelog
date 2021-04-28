@@ -9,7 +9,7 @@
     <body>
 	<nav class="navbar" role="navigation" aria-label="main navigation">
 	    <div class="navbar-brand">
-		<a class="navbar-item" href="/observations">
+		<a class="navbar-item" href="/">
 		    <h1 class="title has-text-link-dark">Emergency Department Patient Observation Logbook</h1>
 		</a>
 		<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
