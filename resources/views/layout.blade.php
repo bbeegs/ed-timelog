@@ -4,14 +4,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Patient Observation Tracker</title>
-	<link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+	<link href="{{secure_asset('css/app.css') }}" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{ secure_asset('css/fontawesome.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ secure_asset('css/solid.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ secure_asset('css/light.css') }}">
     </head>
     <body>
 	<nav class="navbar" role="navigation" aria-label="main navigation">
 	    <div class="navbar-brand">
 		<a class="navbar-item" href="/">
 		    <div class="content">
-			<h1 class="has-text-link-dark">Patient Observation Logbook</h1>
+			<h3 class="has-text-link-dark">Patient Observation Logbook</h3>
 		    </div>
 		</a>
 		<a role="button" class="navbar-burger ml-4" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
