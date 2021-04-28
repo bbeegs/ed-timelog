@@ -1,8 +1,6 @@
 @extends ('layout')
 @section('content')
-  
-    <div class="column table-container is-mobile">
-	<table class="table is-striped is-bordered is-hoverable is-fullwidth">
+	<table class="table is-striped is-bordered is-hoverable is-narrow is-fullwidth">
 		<thead class="has-background-info-light">
 		    <tr>
 			<th>First Name</th>
@@ -55,6 +53,5 @@
 		    @endforeach
 		</tbody>
 		</table>
-	</div>
 	<span class="is-flex is-justify-content-center">{{ $observations->links() }}</span>
 @endsection 
