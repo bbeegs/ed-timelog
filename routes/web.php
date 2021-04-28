@@ -13,11 +13,7 @@ use App\Http\Controllers\ObservationRecordController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/observations', [ObservationRecordController::class, 'index']);
+Route::get('/', [ObservationRecordController::class, 'index']);
 Route::get('/observations/create', [ObservationRecordController::class, 'create']);
 Route::post('/observations',[ObservationRecordController::class, 'store']);
 Route::get('/observations/{observation}/edit',[ObservationRecordController::class, 'edit']);

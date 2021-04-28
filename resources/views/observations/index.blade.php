@@ -9,20 +9,20 @@
 		?>
 	    </h3>
 	</div>
-	<div class="ml-3 columns  is-flex is-justify-content-left">
-	    <p class="mr-4 has-text-info" >Total Hours Today:<strong class="has-text-danger">
-		{{ App\Models\ObservationRecord::where('observation_date', '=', \Carbon\Carbon::today()->toDateString())->sum('total_hours') }}
-	    </strong></p>
-	    <p class="mr-4 has-text-info" >Total Hours This Week:
-		<strong class="has-text-danger">
-		    {{ App\Models\ObservationRecord::where('observation_date', '>=', \Carbon\Carbon::today()->subDays(7)->toDateString())->sum('total_hours') }}</strong>
-		<p class="mr-4 has-text-info">Total Hours This Month: <strong class="has-text-danger">
-		    {{ App\Models\ObservationRecord::where('observation_date', '>=', \Carbon\Carbon::today()->subDays(31)->toDateString())->sum('total_hours') }}
-		</strong></p>
-		<p  class="mr-4 has-text-info">Total Hours This Year: <strong class="has-text-danger">
-		    {{ App\Models\ObservationRecord::where('observation_date', '>=', \Carbon\Carbon::today()->subDays(365)->toDateString())->sum('total_hours') }}
-		</strong></p>
-	    </div>
+	<!-- <div class="ml-3 columns  is-flex is-justify-content-left">
+	     <p class="mr-4 has-text-info" >Total Hours Today:<strong class="has-text-danger">
+	     {{ App\Models\ObservationRecord::where('observation_date', '=', \Carbon\Carbon::today()->toDateString())->sum('total_hours') }}
+	     </strong></p>
+	     <p class="mr-4 has-text-info" >Total Hours This Week:
+	     <strong class="has-text-danger">
+	     {{ App\Models\ObservationRecord::where('observation_date', '>=', \Carbon\Carbon::today()->subDays(7)->toDateString())->sum('total_hours') }}</strong>
+	     <p class="mr-4 has-text-info">Total Hours This Month: <strong class="has-text-danger">
+	     {{ App\Models\ObservationRecord::where('observation_date', '>=', \Carbon\Carbon::today()->subDays(31)->toDateString())->sum('total_hours') }}
+	     </strong></p>
+	     <p  class="mr-4 has-text-info">Total Hours This Year: <strong class="has-text-danger">
+	     {{ App\Models\ObservationRecord::where('observation_date', '>=', \Carbon\Carbon::today()->subDays(365)->toDateString())->sum('total_hours') }}
+	     </strong></p>
+	     </div> -->
 	
 	<div class="column is-justify-content-center">
 	    <table class="table is-striped is-bordered is-fullwidth is-hoverable">

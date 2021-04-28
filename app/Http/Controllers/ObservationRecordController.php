@@ -57,7 +57,7 @@ class ObservationRecordController extends Controller
             'total_hours' => $bbb->format("%H:%I:%S")
         ]);
         $record->save();
-        return redirect("/observations");
+        return redirect("/");
     }
 
     public function FormatDatesAndTimes($date, $time){
@@ -115,7 +115,7 @@ class ObservationRecordController extends Controller
             'observation_date' => $validated['observation_date'],
             'total_hours' => $bbb->format("%H:%I:%S")
         ]);
-        return redirect("/observations");
+        return redirect("/");
     }
 
     /**
@@ -127,6 +127,6 @@ class ObservationRecordController extends Controller
     public function destroy($observation)
     {
         ObservationRecord::destroy($observation);
-        return redirect("/observations");
+        return redirect("/");
     }
 }
