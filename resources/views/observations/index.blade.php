@@ -21,10 +21,10 @@
 			<td class="is-vcentered">{{$ob->first_name}}</td>
 			<td class="is-vcentered">{{$ob->last_name}}</td>
 			<td class="is-vcentered">{{$ob->area }}</td>
-			<td class="is-vcentered">{{$ob->observation_start }}</td>
-			<td class="is-vcentered">{{$ob->observation_end }}</td>
+			<td class="is-vcentered">{{date_create($ob->observation_start)->format('H:i:s') }}</td>
+			<td class="is-vcentered">{{date_create($ob->observation_end)->format('H:i:s')}}</td>
 			<td class="is-vcentered">{{$ob->total_hours }}</td>
-			<td class="is-vcentered">{{$ob->observation_date }}</td>
+			<td class="is-vcentered">{{date_create($ob->observation_date)->format('M d, Y')}}</td>
 			<td class ="is-vcentered"><div class="is-flex">
 			    <form method="GET"
 				  action="/observations/{{ $ob->id }}/edit"> 
