@@ -4,30 +4,27 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Patient Observation Tracker</title>
-	<link href="{{secure_asset('css/app.css') }}" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="{{ secure_asset('css/fontawesome.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ secure_asset('css/solid.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ secure_asset('css/light.css') }}">
+	<link href="{{asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
 	<nav class="navbar" role="navigation" aria-label="main navigation">
 	    <div class="navbar-brand">
 		<a class="navbar-item" href="/">
 		    <div class="content">
-			<h3 class="has-text-link-dark">Patient Observation Logbook</h3>
+			<h3 class="has-text-link-dark m-0">Patient Observation Logbook</h3>
 		    </div>
 		</a>
-		<a role="button" class="navbar-burger ml-4" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+		<a role="button" class="navbar-burger mr-3" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
 		    <span aria-hidden="true" style="background-color: dodgerblue;"></span>
 		    <span aria-hidden="true" style="background-color: dodgerblue;"></span>
 		    <span aria-hidden="true" style="background-color: dodgerblue;"></span>
 		</a>
 	    </div>
-		<div id="navbarBasicExample" class="navbar-menu">
+	    <div id="navbarBasicExample" class="navbar-menu">
 		<div class="navbar-end">
 		    
 		    <a class="navbar-item" href="/observations/create">
-			<button class="button is-link is-light is-outlined">
+			<button class="button is-link is-light is-outlined" style="width: 100%;" >
 			    <span class="icon is-small">
 				<i class="fas fa-plus"></i>
 			    </span>
@@ -35,7 +32,7 @@
 			</button>
 		    </a>
 		    <a class="navbar-item">
-			<button class="button is-link is-light is-outlined">
+			<button class="button is-link is-light is-outlined" style="width: 100%;">
 			    <span class="icon is-small">
 				<i class="fas fa-file-download"></i>
 			    </span>
@@ -44,8 +41,8 @@
 		    </a>
 		    <a class="navbar-item">
       			<div class="field">
-			    <div class="select is-link">
-				<select>
+			    <div class="select is-link" style="width: 100%;">
+				<select style="width: 100%;">
 				    <option>Sort Records By:</option>
 				    <option>Day</option>
 				    <option>Week</option>

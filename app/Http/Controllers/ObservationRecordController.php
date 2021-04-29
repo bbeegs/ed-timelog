@@ -46,7 +46,7 @@ class ObservationRecordController extends Controller
 
         $fff = new \DateTime($this->FormatDatesAndTimes($validated['observation_date'],  $validated['start_time']));
         $ccc = new \DateTime($this->FormatDatesAndTimes($validated['observation_date'],  $validated['end_time']));
-        $bbb = $ccc->diff($fff);
+        $bbb = $ccc->diff($fff)->format("%h:%m:%i");
         $record = ObservationRecord::create([
             'first_name' => $validated['first_name'],
             'last_name' => $validated['last_name'],
@@ -54,7 +54,7 @@ class ObservationRecordController extends Controller
             'observation_start' => $this->FormatDatesAndTimes($validated['observation_date'],  $validated['start_time']),
             'observation_end' => $this->FormatDatesAndTimes($validated['observation_date'],  $validated['end_time']),
             'observation_date' => $validated['observation_date'],
-            'total_hours' => $bbb->format("%H:%I:%S")
+            'total_hours' => $bbb
         ]);
         $record->save();
         return redirect("/");

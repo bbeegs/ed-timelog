@@ -74,10 +74,16 @@
 		    <button class="button is-link">Submit</button>
 		</div>
 		<div class="control">
-		    <button class="button is-link is-light">Cancel</button>
+		    <button id="cancel" class="button is-link is-light">Cancel</button>
 		</div>
 	    </div>
 	    </form>
 	</div>
     </div>
+    <script>
+     document.getElementById("cancel").addEventListener('click', function(event){
+	 event.preventDefault();
+	 window.location.replace('/');
+     });
+    </script>
 @endsection
