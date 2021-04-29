@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Patient Observation Tracker</title>
-	<link href="{{asset('css/app.css') }}" rel="stylesheet">
+	<link href="{{secure_asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
 	<nav class="navbar" role="navigation" aria-label="main navigation">
