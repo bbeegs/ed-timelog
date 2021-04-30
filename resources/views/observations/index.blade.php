@@ -1,7 +1,7 @@
 @extends ('layout')
 @section('content')
 
-  <div class="column table-container is-mobile">
+  <div class="column table-container is-mobile" style="min-height: 70vh;">
 	<table class="table is-striped is-bordered is-hoverable is-fullwidth">
 		<thead class="has-background-info-light">
 		    <tr>

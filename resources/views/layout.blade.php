@@ -70,7 +70,7 @@
 	 });
 	</script>
 	@yield ('content')
-	<footer class="footer" style="position: fixed; bottom:0; width: 100vw;">
+	<footer class="footer">
 	    <div class="content has-text-centered">
 		<p>
 		To request a feature <i class="far fa-smile"></i>
