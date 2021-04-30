@@ -71,6 +71,25 @@
 	 });
 	</script>
 	@yield ('content')
-	
+	<footer class="footer">
+	    <div class="content has-text-centered is-justify-content-center">
+		    <a class="is-justify-content-center" href="mailto: brianbeegan@protonmail.com">
+			<button class="button is-small is-link is-light is-outlined" >
+			    <span class="icon is-small">
+				<i class="far fa-smile"></i>
+			    </span>
+			    <span>Request A Feature</span>
+			</button>
+		    </a><br><br>
+		    <a class="is-justify-content-center" href="mailto: brianbeegan@protonmail.com">
+			<button class="button is-small is-link is-light is-outlined" >
+			    <span class="icon is-small">
+				<i class="fas fa-bug"></i>
+			    </span>
+			    <span>Report A Bug</span>
+			</button>
+		    </a>
+	    </div>
+	</footer>
     </body>
 </html>
