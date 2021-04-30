@@ -25,7 +25,6 @@
 	    </div>
 	    <div id="navbarBasicExample" class="navbar-menu">
 		<div class="navbar-end">
-		    
 		    <a class="navbar-item" href="/observations/create">
 			<button class="button is-link is-light is-outlined" style="width: 100%;" >
 			    <span class="icon is-small">
@@ -71,12 +70,12 @@
 	 });
 	</script>
 	@yield ('content')
-	<footer class="footer">
+	<footer class="footer" style="display: fixed; position: absolute; bottom:0; width: 100vw;">
 	    <div class="content has-text-centered">
 		<p>
 		To request a feature <i class="far fa-smile"></i>
-		Or report a bug <i class="fas fa-bug"></i>
-		Email <a href="mailto: brianbeegan@protonmail.com">Meg's Husband</a>
+		    Or report a bug <i class="fas fa-bug"></i>
+		    Email <a href="mailto: brianbeegan@protonmail.com">Meg's Husband</a>
 		</p>
 	    </div>
 	</footer>
