@@ -1,6 +1,6 @@
 @extends ('layout')
 @section('content')
-    <div class="rows is-mobile" style="font-family: 'IBM Plex Serif', serif;">
+    <div class="rows is-mobile" style="font-family: 'IBM Plex Serif', serif; min-height: 100vh;">
 	<div class="column is-justify-content-center">
 	    <form method="POST" action="/observations">
 		@csrf
