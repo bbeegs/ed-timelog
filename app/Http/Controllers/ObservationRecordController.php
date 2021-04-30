@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ObservationsRecordsExport;
 use App\Models\ObservationRecord;
 use Illuminate\Http\Request;
 
@@ -44,9 +46,9 @@ class ObservationRecordController extends Controller
             'observation_date' => 'required'
         ]);
 
-        $fff = new \DateTime($this->FormatDatesAndTimes($validated['observation_date'],  $validated['start_time']));
-        $ccc = new \DateTime($this->FormatDatesAndTimes($validated['observation_date'],  $validated['end_time']));
-        $bbb = $ccc->diff($fff)->format("%h:%m:%i");
+        $startTime = new \DateTime($this->FormatDatesAndTimes($validated['observation_date'],  $validated['start_time']));
+        $endTime = new \DateTime($this->FormatDatesAndTimes($validated['observation_date'],  $validated['end_time']));
+        $diffTime = $endTime->diff($startTime)->format("%h:%m:%i");
         $record = ObservationRecord::create([
             'first_name' => $validated['first_name'],
             'last_name' => $validated['last_name'],
@@ -54,7 +56,7 @@ class ObservationRecordController extends Controller
             'observation_start' => $this->FormatDatesAndTimes($validated['observation_date'],  $validated['start_time']),
             'observation_end' => $this->FormatDatesAndTimes($validated['observation_date'],  $validated['end_time']),
             'observation_date' => $validated['observation_date'],
-            'total_hours' => $bbb
+            'total_hours' => $diffTime
         ]);
         $record->save();
         return redirect("/");
@@ -128,5 +130,10 @@ class ObservationRecordController extends Controller
     {
         ObservationRecord::destroy($observation);
         return redirect("/");
+    }
+
+    public function export()
+    {
+        return Excel::download(new ObservationsRecordsExport, 'ed-observations-test.xlsx');
     }
 }

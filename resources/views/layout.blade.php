@@ -4,14 +4,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Patient Observation Tracker</title>
-	<link href="{{secure_asset('css/app.css') }}" rel="stylesheet">
+	<link href="{{asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
 	<nav class="navbar" role="navigation" aria-label="main navigation">
 	    <div class="navbar-brand">
 		<a class="navbar-item" href="/">
 		    <div class="content">
-			<h3 class="has-text-link-dark m-0">Patient Observation Logbook</h3>
+			<h4 class="has-text-link-dark m-0">
+			    <span>
+				<i class="fas fa-book-medical"> </i>
+			    </span><span>Patient Observation Logbook </span></h4>
 		    </div>
 		</a>
 		<a role="button" class="navbar-burger mr-3" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -31,26 +34,13 @@
 			    <span>Enter Observation Time</span>
 			</button>
 		    </a>
-		    <a class="navbar-item">
+		    <a class="navbar-item" href="/observations/export">
 			<button class="button is-link is-light is-outlined" style="width: 100%;">
 			    <span class="icon is-small">
 				<i class="fas fa-file-download"></i>
 			    </span>
 			    <span>Export Records</span>
 			</button>
-		    </a>
-		    <a class="navbar-item">
-      			<div class="field">
-			    <div class="select is-link" style="width: 100%;">
-				<select style="width: 100%;">
-				    <option>Sort Records By:</option>
-				    <option>Day</option>
-				    <option>Week</option>
-				    <option>Month</option>
-				    <option>Year</option>
-				</select>
-			    </div>
-			</div>
 		    </a>
 	</nav>
 	<script>

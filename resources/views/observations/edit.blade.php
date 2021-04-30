@@ -12,11 +12,11 @@
 		    <span class="icon is-small is-left">
 			<i class="fas fa-user"></i>
 		    </span>
-		    <span class="icon is-small is-right">
-			<i class="fas fa-check"></i>
-		    </span>
 		</div>
-	    </div>
+		 @error('first_name')
+		<p class="help is-danger">{{$errors->first('first_name')}}</p>
+		@enderror
+		</div>
 	    
 	    <div class="field">
 		<label class="label">Last Name</label>
@@ -25,10 +25,10 @@
 		    <span class="icon is-small is-left">
 			<i class="fas fa-user"></i>
 		    </span>
-		    <span class="icon is-small is-right">
-			<i class="fas fa-check"></i>
-		    </span>
 		</div>
+		@error('last_name')
+		<p class="help is-danger">{{$errors->first('first_name')}}</p>
+		@enderror
 	    </div>
 	    
 	    
@@ -37,7 +37,6 @@
 		<div class="control">
 		    <div class="select">
 			<select value="{{ $observation->area }}" name="area">
-			    <option disabled>Location</option>
 			    <option {{ $observation->area == 'A Side' ? 'selected' : '' }}>A Side</option>
 			    <option {{ $observation->area == 'B Side' ? 'selected' : '' }}>B Side</option>
 			    <option {{ $observation->area == 'C Side' ? 'selected' : '' }}>C Side</option>
@@ -46,12 +45,18 @@
 			</select>
 		    </div>
 		</div>
+		 @error('area')
+		<p class="help is-danger">{{$errors->first('area')}}</p>
+		@enderror
 	    </div>
 	     <div class="field">
 		<label class="label">Date</label>
 		<div class="control">
 		    <input class="input" name="observation_date" type="date" value="{{ $observation->observation_date }}" >
 		</div>
+		@error('observation_date')
+		<p class="help is-danger">{{$errors->first('observation_date')}}</p>
+		@enderror
 	     </div>
 	     
 	    
@@ -59,13 +64,19 @@
 		<label class="label">Start Time</label>
 		<div class="control">
 		    <input class="input" name="start_time" type="time" value="{{date("H:i", strtotime($observation->observation_start))  }}">
-	    </div>
+		</div>
+		@error('start_time')
+		<p class="help is-danger">{{$errors->first('start_time')}}</p>
+		@enderror
 	    </div>
 	    <div class="field">
 		<label class="label">End Time</label>
 		<div class="control">
 		    <input class="input" type="time" name="end_time" value="{{date("H:i", strtotime($observation->observation_end))  }}">
 		</div>
+		@error('end_time')
+		<p class="help is-danger">{{$errors->first('end_time')}}</p>
+		@enderror
 	    </div>
 	    <div class="field is-grouped">
 		<div class="control">

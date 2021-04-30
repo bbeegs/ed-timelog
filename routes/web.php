@@ -19,3 +19,4 @@ Route::post('/observations',[ObservationRecordController::class, 'store']);
 Route::get('/observations/{observation}/edit',[ObservationRecordController::class, 'edit']);
 Route::put('/observations/{observation}', [ObservationRecordController::class, 'update']);
 Route::delete('/observations/{observation}', [ObservationRecordController::class, 'destroy']);
+Route::get('observations/export/', [ObservationRecordController::class, 'export']);

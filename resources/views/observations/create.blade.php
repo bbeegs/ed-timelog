@@ -24,14 +24,18 @@
 	    <div class="field">
 		<label class="label">Last Name</label>
 		<div class="control has-icons-left has-icons-right">
-		    <input class="input " type="text" name="last_name" placeholder="EDTA Last Name" value="" >
+		    <input class="input @error('last_name') is-danger @enderror"
+			   type="text"
+			   name="last_name"
+			   placeholder="EDTA Last Name"
+			   value="{{ old('last_name') }}" >
 		    <span class="icon is-small is-left">
 			<i class="fas fa-user"></i>
 		    </span>
-		    <span class="icon is-small is-right">
-			<i class="fas fa-check"></i>
-		    </span>
 		</div>
+		@error('last_name')
+		<p class="help is-danger">{{$errors->first('last_name')}}</p>
+		@enderror
 	    </div>
 	    
 	    
@@ -40,7 +44,6 @@
 		<div class="control">
 		    <div class="select">
 			<select name="area">
-			    <option disabled>Location</option>
 			    <option>A Side</option>
 			    <option>B Side</option>
 			    <option>C Side</option>

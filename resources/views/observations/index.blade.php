@@ -1,7 +1,7 @@
 @extends ('layout')
 @section('content')
-  
-    <div class="column table-container is-mobile">
+
+  <div class="column table-container is-mobile">
 	<table class="table is-striped is-bordered is-hoverable is-fullwidth">
 		<thead class="has-background-info-light">
 		    <tr>
@@ -47,7 +47,10 @@
 				    <button @if($ob->observation_date <  \Carbon\Carbon::today()->subDays(31)) title="Disabled button"  disabled @endif
 					type="submit"
 					onclick="return confirm('Are you sure?')"
-					class="button is-light is-danger">Remove</button>
+					class="button is-light is-danger">
+				    <span class="icon is-small">
+					<i class="far fa-trash-alt"></i>
+				    </span><span>Remove</span></button>
 				</form>
 			</div>
 			</td>

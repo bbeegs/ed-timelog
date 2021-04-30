@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Exports;
+
+use App\ObservationRecord;
+use Maatwebsite\Excel\Concerns\FromCollection;
+
+class ObservationsRecordsExport implements FromCollection
+{
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function collection()
+    {
+        return ObservationRecord::all();
+    }
+}
