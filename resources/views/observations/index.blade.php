@@ -30,7 +30,7 @@
 				  action="/observations/{{ $ob->id }}/edit"> 
 				
 				
-				<button class="button is-light is-success mr-3" type="submit" style="display: inline;"
+				<button class="button is-light is-primary mr-3" type="submit" style="display: inline;"
 					@if($ob->observation_date <  \Carbon\Carbon::today()->subDays(31)) title="Disabled button"  disabled @endif>
 				<span class="icon is-small">
 				    <i class="fas fa-edit"></i>
