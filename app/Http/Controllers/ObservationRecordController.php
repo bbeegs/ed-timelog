@@ -136,4 +136,8 @@ class ObservationRecordController extends Controller
     {
         return Excel::download(new ObservationsRecordsExport, 'ed-observations-test.xlsx');
     }
+
+    public function getHourlyTotals(){
+        return DB::table('observation_records')->sum('total_hours');
+    }
 }

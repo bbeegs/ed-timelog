@@ -7,7 +7,7 @@
 	<link href="{{secure_asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-	<nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+	<nav class="navbar is-transparent" role="navigation" aria-label="main navigation" style="border-bottom: 1px solid rgb(151, 151, 151);">
 	    <div class="navbar-brand">
 		<a class="navbar-item" href="/">
 		    <div class="content">

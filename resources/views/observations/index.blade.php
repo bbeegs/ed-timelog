@@ -2,6 +2,9 @@
 @section('content')
 
   <div class="column table-container is-mobile" style="min-height: 100vh;">
+	<div class="box">
+		<h1><strong>Total Hours: </strong>{{\App\Models\ObservationRecord::getHourlyTotals()}}</h1>
+	</div>
 	<table class="table is-striped is-bordered is-hoverable is-fullwidth">
 		<thead class="has-background-info-light">
 		    <tr>
@@ -21,9 +24,9 @@
 			<td class="is-vcentered">{{$ob->first_name}}</td>
 			<td class="is-vcentered">{{$ob->last_name}}</td>
 			<td class="is-vcentered">{{$ob->area }}</td>
-			<td class="is-vcentered">{{date_create($ob->observation_start)->format('H:i:s') }}</td>
-			<td class="is-vcentered">{{date_create($ob->observation_end)->format('H:i:s')}}</td>
-			<td class="is-vcentered">{{$ob->total_hours }}</td>
+			<td class="is-vcentered">{{date_create($ob->observation_start)->format('H:i') }}</td>
+			<td class="is-vcentered">{{date_create($ob->observation_end)->format('H:i')}}</td>
+			<td class="is-vcentered">{{date('h:i', strtotime($ob->total_hours))}}</td>
 			<td class="is-vcentered">{{date_create($ob->observation_date)->format('M d, Y')}}</td>
 			<td class ="is-vcentered"><div class="is-flex">
 			    <form method="GET"
