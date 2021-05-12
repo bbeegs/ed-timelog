@@ -48,7 +48,10 @@ class ObservationRecordController extends Controller
 
         $startTime = new \DateTime($this->FormatDatesAndTimes($validated['observation_date'],  $validated['start_time']));
         $endTime = new \DateTime($this->FormatDatesAndTimes($validated['observation_date'],  $validated['end_time']));
-        $diffTime = $endTime->diff($startTime)->format("%h:%m:%i");
+        if($endTime < $startTime){
+            $endTime->modify('+1 day');
+        }
+        $diffTime = $endTime->diff($startTime)->format("%h:%i");
         $record = ObservationRecord::create([
             'first_name' => $validated['first_name'],
             'last_name' => $validated['last_name'],
@@ -137,7 +140,4 @@ class ObservationRecordController extends Controller
         return Excel::download(new ObservationsRecordsExport, 'ed-observations-test.xlsx');
     }
 
-    public function getHourlyTotals(){
-        return DB::table('observation_records')->sum('total_hours');
-    }
 }

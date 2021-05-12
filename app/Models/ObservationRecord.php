@@ -12,11 +12,16 @@ class ObservationRecord extends Model
     protected $guarded = [];
 
     public static function getHourlyTotals(){
-        $total_hours  = DB::table('observation_records')->get('total_hours');
-        $total_time = 0;
-        foreach($total_hours as $th){
-            $total_time += strtotime($th->total_hours);
+        $total_time  = DB::table('observation_records')->get('total_hours');
+        $total_hours = 0;
+        $total_mins = 0;
+        foreach($total_time as $th){
+            list($hour, $minute) = explode(':', $th->total_hours);
+            $total_mins += $hour * 60;
+            $total_mins += $minute;
         }
-        return date('h:i', $total_time);
+        $total_hours = floor($total_mins / 60);
+        $total_mins -= $total_hours * 60;
+        return sprintf('%02d:%02d', $total_hours, $total_mins);
     }
 }
