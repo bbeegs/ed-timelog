@@ -7,7 +7,7 @@
 	<link href="{{secure_asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-	<nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+	<nav class="navbar has-background-light" role="navigation" aria-label="main navigation">
 	    <div class="navbar-brand">
 		<a class="navbar-item" href="/">
 		    <div class="content">
@@ -17,13 +17,13 @@
 			    </span><span>Patient Observation Log</span></h4>
 		    </div>
 		</a>
-		<a role="button" class="navbar-burger mr-3 has-background-white" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+		<a role="button" class="navbar-burger mr-3 has-background-light" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
 		    <span aria-hidden="true" style="background-color: dodgerblue;"></span>
 		    <span aria-hidden="true" style="background-color: dodgerblue;"></span>
 		    <span aria-hidden="true" style="background-color: dodgerblue;"></span>
 		</a>
 	    </div>
-	    <div id="navbarBasicExample" class="navbar-menu">
+	    <div id="navbarBasicExample" class="navbar-menu is-shadowless">
 		<div class="navbar-end">
 		    <a class="navbar-item" href="/observations/create">
 			<button class="button is-link" style="width: 100%;" >

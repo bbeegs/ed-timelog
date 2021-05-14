@@ -14,9 +14,43 @@ class ObservationRecordController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('observations.index', ['observations' => ObservationRecord::orderBy('observation_date', 'DESC')->simplePaginate(10)]);
+        $start_date = '';
+        $end_date = '';
+        if(!$request->filled('start_date')){
+            $ob_date = ObservationRecord::orderBy('observation_date', 'ASC')->first('observation_date');
+            $start_date = $ob_date->observation_date ?? date("Y-m-d");
+        }
+        else{
+            $start_date = $request->start_date;
+        }
+
+        if(!$request->filled('end_date')){
+            $end_date = date("Y-m-d");
+        }
+        else{
+            $end_date = $request->end_date;
+        }
+
+        $total_time  = ObservationRecord::orderBy('observation_date', 'DESC')->whereBetween('observation_date', [$start_date, $end_date ])->get('total_hours');
+        $total_hours = 0;
+        $total_mins = 0;
+        foreach($total_time as $th){
+            list($hour, $minute) = explode(':', $th->total_hours);
+            $total_mins += $hour * 60;
+            $total_mins += $minute;
+        }
+        $total_hours = floor($total_mins / 60);
+        $total_mins -= $total_hours * 60;
+        $calc_total = sprintf('%02d:%02d', $total_hours, $total_mins);
+
+        return view('observations.index', [
+            'observations' => ObservationRecord::orderBy('observation_date', 'DESC')->whereBetween('observation_date', [$start_date, $end_date ])->simplePaginate(10),
+            'start_date' => $start_date,
+            'end_date' => $end_date,
+            'total_hours' => $calc_total
+        ]);
     }
 
     /**
