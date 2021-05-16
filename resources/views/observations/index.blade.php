@@ -2,8 +2,8 @@
 @section('content')
 
   <div class="column table-container is-mobile" style="min-height: 100vh;">
-	<div class="box is-mobile has-background-light">
-		<h1><strong>Total Observation Time: <span style="color: red;">{{$total_hours}}</span></strong></h1>
+	<div class="box is-mobile has-background-light is-shadowless content">
+		<h3 class="ml-2 mb-2"><strong>Total Observation Hours: <span style="color: red;">{{$total_hours}}</span></strong></h3>
 		<form method="GET" action="/">
 			<div class="field is-horizontal is-align-content-center">
 				<div class="field-body is-align-items-center">
@@ -23,7 +23,7 @@
 			</div>
 		</form>
 	</div>
-	<table class="table is-striped is-bordered is-hoverable is-fullwidth">
+	<table class="table is-striped is-bordered is-hoverable is-fullwidth" style="font-family: font-family: 'Lora', serif;">
 		<thead class="has-background-info-light">
 		    <tr>
 			<th>First Name</th>
@@ -51,8 +51,7 @@
 				  action="/observations/{{ $ob->id }}/edit"> 
 				
 				
-				<button class="button is-light is-primary mr-3" type="submit" style="display: inline;"
-					@if($ob->observation_date <  \Carbon\Carbon::today()->subDays(31)) title="Disabled button"  disabled @endif>
+				<button class="button is-light is-primary mr-3" type="submit" style="display: inline;">
 				<span class="icon is-small">
 				    <i class="fas fa-edit"></i>
 				</span>
@@ -65,7 +64,7 @@
 				    @csrf
 				    @method('DELETE')
 
-				    <button @if($ob->observation_date <  \Carbon\Carbon::today()->subDays(31)) title="Disabled button"  disabled @endif
+				    <button
 					type="submit"
 					onclick="return confirm('Are you sure?')"
 					class="button is-light is-danger">
@@ -80,7 +79,7 @@
 		</tbody>
 		</table>
 	</div>
-	<span class="is-flex is-justify-content-center">{{ $observations->links() }}</span>
+	<span class="is-flex is-justify-content-center">{{ $observations->appends($_GET)->links() }}</span>
 	<script>
 		function test(){
 			alert("onblur b");

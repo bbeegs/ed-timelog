@@ -166,7 +166,7 @@ class ObservationRecordController extends Controller
     public function destroy($observation)
     {
         ObservationRecord::destroy($observation);
-        return redirect("/");
+        return redirect()->back(); 
     }
 
     public function export()

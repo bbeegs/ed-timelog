@@ -28,7 +28,7 @@ class ObservationRecordFactory extends Factory
             'observation_start' => $this->faker->dateTimeThisYear($max = 'now', $timezone = null),
             'observation_end' => $this->faker->dateTimeThisYear($max = 'now', $timezone = null),
             'observation_date' => $this->faker->dateTimeThisYear($max = 'now', $timezone = null),
-            'total_hours' => $this->faker->numberBetween($min = 1, $max = 5) 
+            'total_hours' => sprintf('%d:%d', $this->faker->numberBetween($min = 1, $max = 5), $this->faker->numberBetween($min = 1, $max = 5)) 
         ];
     }
 }

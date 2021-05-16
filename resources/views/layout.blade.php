@@ -5,7 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Patient Observation Tracker</title>
 	<link href="{{secure_asset('css/app.css') }}" rel="stylesheet">
-    </head>
+	<style>
+		a.navbar-item:hover{
+			background-color: hsl(0, 0%, 96%);
+		}
+	</style>
+</head>
     <body>
 	<nav class="navbar has-background-light" role="navigation" aria-label="main navigation">
 	    <div class="navbar-brand">
@@ -14,26 +19,27 @@
 			<h4 class="has-text-link-dark m-0">
 			    <span>
 				<i class="fas fa-book-medical"> </i>
-			    </span><span>Patient Observation Log</span></h4>
+			    </span>
+				<span>Patient Observation Log</span></h4>
 		    </div>
 		</a>
 		<a role="button" class="navbar-burger mr-3 has-background-light" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-		    <span aria-hidden="true" style="background-color: dodgerblue;"></span>
-		    <span aria-hidden="true" style="background-color: dodgerblue;"></span>
-		    <span aria-hidden="true" style="background-color: dodgerblue;"></span>
+		    <span aria-hidden="true" ></span>
+		    <span aria-hidden="true" ></span>
+		    <span aria-hidden="true" ></span>
 		</a>
 	    </div>
-	    <div id="navbarBasicExample" class="navbar-menu is-shadowless">
+	    <div id="navbarBasicExample" class="navbar-menu is-hovered is-shadowless">
 		<div class="navbar-end">
 		    <a class="navbar-item" href="/observations/create">
-			<button class="button is-link" style="width: 100%;" >
+				<button class="button is-link" style="width: 100%;" >
 			    <span class="icon is-small">
-				<i class="fas fa-plus"></i>
+					<i class="fas fa-plus"></i>
 			    </span>
-			    <span>Enter Observation Time</span>
-			</button>
+			    	<span>Enter Observation Time</span>
+				</button>
 		    </a>
-		    <a class="navbar-item" href="/observations/export">
+		    <a class="navbar-item has-text-link-dark" href="/observations/export">
 			<button class="button is-primary" style="width: 100%;">
 			    <span class="icon is-small">
 				<i class="fas fa-file-download"></i>
