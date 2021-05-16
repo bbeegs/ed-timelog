@@ -39,7 +39,7 @@
 			    	<span>Enter Observation Time</span>
 				</button>
 		    </a>
-		    <a class="navbar-item has-text-link-dark" href="/observations/export">
+		    <a class="navbar-item has-text-link-dark" onclick="runExport()">
 			<button class="button is-primary" style="width: 100%;">
 			    <span class="icon is-small">
 				<i class="fas fa-file-download"></i>
@@ -49,6 +49,11 @@
 		    </a>
 	</nav>
 	<script>
+		function runExport(){
+				const start = document.getElementById('start_date').value;
+				const end = document.getElementById('end_date').value;
+				window.location = '/observations/export?start_date=' + start + '&end_date=' + end;
+			}
 	 document.addEventListener('DOMContentLoaded', () => {
 
 	     // Get all "navbar-burger" elements
@@ -74,6 +79,7 @@
 	     }
 
 	 });
+
 	</script>
 	@yield ('content')
 	<footer class="footer">

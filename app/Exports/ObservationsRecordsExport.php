@@ -10,21 +10,30 @@ class ObservationsRecordsExport implements FromCollection, WithHeadings
     /**
     * @return \Illuminate\Support\Collection
     */
+    protected $from, $to;
+
+    public function __construct(String $from, String $to) {
+
+        $this->from = $from;
+        $this->to = $to;
+    }
     public function collection()
     {
-        return ObservationRecord::select('observation_date', 'observation_start', 'observation_end', 'total_hours', 'area', 'first_name', 'last_name')->orderBy('observation_date', 'DESC')->get();
+        return ObservationRecord::select('observation_date', 'observation_start', 'observation_end', 'total_hours', 'area', 'first_name', 'last_name')->whereBetween('observation_date', [$this->from, $this->to ])->get();
     }
 
     public function headings(): array
     {
         return [
+            [sprintf('Observation Breakdown From %s - %s', $this->from, $this->to)],
+            [
             'Observation Date',
             'Start Time',
             'End Time',
             'Total Time',
             'Work Area',
             'First Name',
-            'Last Name',
-        ];
+            'Last Name',]]
+            ;
     }
 }

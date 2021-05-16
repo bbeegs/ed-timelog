@@ -11,13 +11,13 @@
 						<label class="label">From:</label>
 				  	</div>
 			  		<div class="field">
-				  		<input class="input" value="{{$start_date}}"name="start_date" type="date" onblur="submit()">
+				  		<input class="input" id="start_date" value="{{$start_date}}"name="start_date" type="date" onblur="submit()">
 			  		</div>
 			  		<div class="is-justify-content-space-between m-2">
 						<label class="label">To:</label>
 			  		</div>
 			  		<div class="field">
-						<input class="input" value="{{$end_date}}" type="date" name="end_date"  onblur="submit()">
+						<input class="input" value="{{$end_date}}" id="end_date" type="date" name="end_date"  onblur="submit()">
 					</div>
 				</div>
 			</div>
@@ -80,9 +80,4 @@
 		</table>
 	</div>
 	<span class="is-flex is-justify-content-center">{{ $observations->appends($_GET)->links() }}</span>
-	<script>
-		function test(){
-			alert("onblur b");
-		}
-	</script>
 @endsection 

@@ -169,9 +169,11 @@ class ObservationRecordController extends Controller
         return redirect()->back(); 
     }
 
-    public function export()
+    public function export(Request $request)
     {
-        return Excel::download(new ObservationsRecordsExport, 'ed-observations-test.xlsx');
+        $start_date = $request->query('start_date');
+        $end_date = $request->query('end_date');
+        return Excel::download(new ObservationsRecordsExport($start_date, $end_date), 'ed-observations-test.xlsx');
     }
 
 }
