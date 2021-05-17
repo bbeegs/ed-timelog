@@ -20,7 +20,7 @@ class ObservationsRecordsExport implements FromCollection, WithHeadings
     }
     public function collection()
     {
-        return ObservationRecord::select(DB::raw ("observation_date, to_char(observation_start, 'HH24:MM'), to_char(observation_start, 'HH24:MM'), total_hours, area, first_name, last_name"))->whereBetween('observation_date', [$this->from, $this->to ])->get();
+        return ObservationRecord::select(DB::raw ("observation_date, to_char(observation_start, 'HH24:MM') start_time, to_char(observation_end, 'HH24:MM') end_time, total_hours, area, first_name, last_name"))->whereBetween('observation_date', [$this->from, $this->to ])->get();
     }
 
     public function headings(): array
