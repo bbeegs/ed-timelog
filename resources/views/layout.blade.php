@@ -10,6 +10,9 @@
 			background-color: hsl(0, 0%, 96%);
 		}
 	</style>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
 </head>
     <body>
 	<nav class="navbar has-background-light" role="navigation" aria-label="main navigation" style="font-family: 'Varela Round', sans-serif;">
