@@ -96,7 +96,7 @@ class ObservationRecordController extends Controller
             'total_hours' => $diffTime
         ]);
         $record->save();
-        return redirect("/");
+        return redirect()->back(); 
     }
 
     public function FormatDatesAndTimes($date, $time){
@@ -154,7 +154,7 @@ class ObservationRecordController extends Controller
             'observation_date' => $validated['observation_date'],
             'total_hours' => $bbb->format("%H:%I:%S")
         ]);
-        return redirect("/");
+        return redirect()->back(); 
     }
 
     /**
