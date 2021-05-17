@@ -12,7 +12,7 @@
 	</style>
 </head>
     <body>
-	<nav class="navbar has-background-light" role="navigation" aria-label="main navigation">
+	<nav class="navbar has-background-light" role="navigation" aria-label="main navigation" style="font-family: 'Varela Round', sans-serif;">
 	    <div class="navbar-brand">
 		<a class="navbar-item" href="/">
 		    <div class="content">

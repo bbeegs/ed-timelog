@@ -1,8 +1,7 @@
 @extends ('layout')
 @section('content')
-
-  <div class="column table-container is-mobile" style="min-height: 100vh;">
-	<div class="box is-mobile has-background-light is-shadowless content">
+  <div class="column table-container is-mobile" style="min-height: 80vh;">
+	<div class="box is-mobile has-background-light is-shadowless content" style="font-family: 'Varela Round', sans-serif;">
 		<h3 class="ml-2 mb-2"><strong>Total Observation Hours: <span style="color: red;">{{$total_hours}}</span></strong></h3>
 		<form method="GET" action="/">
 			<div class="field is-horizontal is-align-content-center">
@@ -23,8 +22,8 @@
 			</div>
 		</form>
 	</div>
-	<table class="table is-striped is-bordered is-hoverable is-fullwidth" style="font-family: font-family: 'Lora', serif;">
-		<thead class="has-background-info-light">
+	<table class="table is-striped is-bordered is-hoverable is-fullwidth" style="font-family: 'Lora', serif;">
+		<thead class="has-background-info-light" style="font-family: 'Varela Round', sans-serif;">
 		    <tr>
 			<th>First Name</th>
 			<th>Last Name</th>

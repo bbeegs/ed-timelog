@@ -3,6 +3,7 @@
 namespace App\Exports;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use App\Models\ObservationRecord;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
 class ObservationsRecordsExport implements FromCollection, WithHeadings
@@ -19,7 +20,7 @@ class ObservationsRecordsExport implements FromCollection, WithHeadings
     }
     public function collection()
     {
-        return ObservationRecord::select('observation_date', 'observation_start', 'observation_end', 'total_hours', 'area', 'first_name', 'last_name')->whereBetween('observation_date', [$this->from, $this->to ])->get();
+        return ObservationRecord::select(DB::raw ('observation_date, DATE_FORMAT(observation_start, "%H:%I"), DATE_FORMAT(observation_end, "%H:%I"), total_hours, area, first_name, last_name'))->whereBetween('observation_date', [$this->from, $this->to ])->get();
     }
 
     public function headings(): array
